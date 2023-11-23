@@ -19,10 +19,13 @@ function Card({ data }) {
     <>
       {
         data.map(data => (
-          <div key={data.id}>
-            <img src={data.image} alt="" />
-            <h3>{data.title}</h3>
-            <p>${data.price}</p>
+          <div className="card" key={data.id}>
+            <div className="card-img-wrapper">
+              <img className="card-img" src={data.image} alt="" /> 
+            </div>
+            <p className='card-title'>{data.title}</p>
+            <p className='card-rating'>{data.rating.rate}/5 - ({data.rating.count})</p>
+            <p className='card-price'>${data.price}</p>
           </div>
         ))
       }
