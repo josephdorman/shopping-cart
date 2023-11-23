@@ -4,6 +4,7 @@ import Store from './store.jsx';
 import Home from './home.jsx';
 import Cart from './cart.jsx'
 import ErrorPage from './errorPage.jsx';
+import ProductPage from "./productPage.jsx";
 
 function Router() {
   const router = createBrowserRouter([
@@ -13,8 +14,9 @@ function Router() {
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Home /> },
-        { path: "store", element: <Store /> },
+        { path: "store", element: <Store />},
         { path: "cart", element: <Cart /> },
+        { path: "product/:name", element: <ProductPage />},
       ]
     },
   ]);
