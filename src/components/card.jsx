@@ -25,7 +25,7 @@ function Card({ data }) {
             </div>
             <p className='card-title'>{data.title}</p>
             <p className='card-rating'>{data.rating.rate}/5 - ({data.rating.count})</p>
-            <p className='card-price'>${data.price}</p>
+            <p className='card-price'>${data.price}<button>ADD TO CART</button></p>
           </div>
         ))
       }
