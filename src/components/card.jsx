@@ -3,15 +3,26 @@ import '../styles/card.css'
 
 function Card({ data }) {
 
+  /* info in array
+  Category
+  Description
+  ID
+  Image
+  Price
+  Rating
+   Count
+   Rate
+  Title
+  */
+
   return (
     <>
       {
         data.map(data => (
           <div key={data.id}>
-            <div>{data.id}</div>
-            <div>{data.description}</div>
-            <div>{data.category}</div>
-            <div>{data.price}</div>
+            <img src={data.image} alt="" />
+            <h3>{data.title}</h3>
+            <p>${data.price}</p>
           </div>
         ))
       }

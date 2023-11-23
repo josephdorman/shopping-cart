@@ -8,7 +8,7 @@ function Store() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
+    fetch('https://fakestoreapi.com/products/category/jewelery?limit=1', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
