@@ -5,9 +5,9 @@ function Nav() {
     <>
       <nav>
         <ul>
-          <li>HOME</li>
-          <li>SHOP</li>
-          <li>CART</li>
+          <li><button>HOME</button></li>
+          <li><button>SHOP</button></li>
+          <li><button>CART</button></li>
         </ul>
       </nav>
     </>
