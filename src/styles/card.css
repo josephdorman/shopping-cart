@@ -7,6 +7,10 @@
   gap: 5px;
 }
 
+.card:hover {
+  box-shadow: 0 0 10px #ccc;
+}
+
 .card-img-wrapper {
   display: flex;
   justify-content: center;

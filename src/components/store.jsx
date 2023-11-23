@@ -26,7 +26,7 @@ function Store() {
       {error 
       ? <p>A network error was encountered</p> // if error render error
       : loading ? <p>Loading...</p> // if no error check if loading and output loading if loading
-      : <Card data={data}/> // if not loading then render the card (data finished fetching)
+      : <div className="card-container"><Card data={data}/></div> // if not loading then render the card (data finished fetching)
       }
     </>
   )
