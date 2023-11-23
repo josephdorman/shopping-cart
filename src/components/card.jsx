@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/card.css'
 
 function Card({ data }) {
@@ -19,3 +20,7 @@ function Card({ data }) {
 }
 
 export default Card
+
+Card.propTypes = {
+  data: PropTypes.array.isRequired
+}
