@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import Card from './card'
 import '../styles/store.css'
 
-function Store() {
-  const [data, setData] = useState(null)
+function Store({data, error, loading}) {
+  /*
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -19,6 +19,7 @@ function Store() {
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, [])
+  */
 
   return (
     <>
