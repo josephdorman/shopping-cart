@@ -11,6 +11,7 @@ function Router() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [product, setProduct] = useState(null)
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products/category/jewelery?limit=1', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
@@ -25,6 +26,10 @@ function Router() {
       .finally(() => setLoading(false));
   }, [])
 
+  const onProductClick = (product) => {
+    setProduct(product)
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -32,9 +37,9 @@ function Router() {
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Home /> },
-        { path: "store", element: <Store data={data} error={error} loading={loading} />},
+        { path: "store", element: <Store data={data} error={error} loading={loading} onProductClick={onProductClick}/>},
         { path: "cart", element: <Cart /> },
-        { path: "product/:name", element: <ProductPage />},
+        { path: "product/:name", element: <ProductPage product={product}/>},
       ]
     },
   ]);

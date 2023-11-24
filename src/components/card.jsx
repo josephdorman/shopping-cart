@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import '../styles/card.css'
 
-function Card({ data }) {
+function Card({ data , onProductClick}) {
 
   /* info in array
   Category
@@ -20,7 +20,7 @@ function Card({ data }) {
     <>
       {
         data.map(data => (
-          <Link to={`../product/${data.title}`} key={data.id}>
+          <Link to={`../product/${data.title}`} key={data.id} onClick={() => onProductClick(data)}>
           <div className="card" key={data.id}>
             <div className="card-img-wrapper">
               <img className="card-img" src={data.image} alt="" /> 
@@ -40,5 +40,6 @@ function Card({ data }) {
 export default Card
 
 Card.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  onProductClick: PropTypes.func.isRequired
 }
