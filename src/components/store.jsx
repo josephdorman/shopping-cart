@@ -1,26 +1,8 @@
-import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
 import Card from './card'
 import '../styles/store.css'
 
 function Store({data, error, loading}) {
-  /*
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery?limit=1', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
-      .then((response) => {
-        if (response.status >= 400) {
-          throw new Error("server error");
-        }
-        return response.json();
-      })
-      .then(json => setData(json))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }, [])
-  */
-
   return (
     <>
       <p>THIS IS THE STORE PAGE</p>
@@ -34,3 +16,9 @@ function Store({data, error, loading}) {
 }
 
 export default Store
+
+Store.propTypes = {
+  data: PropTypes.array,
+  error: PropTypes.string,
+  loading: PropTypes.bool
+}
