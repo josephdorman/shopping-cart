@@ -43,7 +43,7 @@ function Router() {
       children: [
         { index: true, element: <Home /> },
         { path: "store", element: <Store data={data} error={error} loading={loading} onProductClick={onProductClick}/>},
-        { path: "cart", element: <Cart /> },
+        { path: "cart", element: <Cart cart={cart}/> },
         { path: "product/:name", element: <ProductPage product={product} onAddToCart={onAddToCart}/>},
       ]
     },
