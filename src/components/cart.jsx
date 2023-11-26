@@ -6,7 +6,7 @@ function Cart({ cart }) {
       THIS IS THE CART PAGE
       {
         cart.map(element => (
-          <div key={element.id}>{element.title}</div>
+          <div key={element.id}>{element.title} {element.quantity}</div>
         ))
       }
     </>

@@ -27,12 +27,33 @@ function Router() {
       .finally(() => setLoading(false));
   }, [])
 
+  const setQuantity = (item) => {
+    // if quantity key not in obj, first time being added to cart so give it quantity key init to 1
+    if ('quantity' in item === false) {
+      product.quantity = 1;
+    } // else its already in cart, so just increase quantity
+    else {
+      product.quantity++;
+    }
+  }
+
+  // set product for product page to render clicked/focused product
   const onProductClick = (product) => {
     setProduct(product)
   }
 
-  const onAddToCart = (product) => {
-    setCart(cart => [...cart, product]);
+  const onAddToCart = (item) => {
+    //cart.find(obj => obj.id === item.id) === undefined
+    // check if item is in cart
+    // if not in cart set initial quantity and add it
+    if (cart.find(obj => obj.id === item.id) === undefined) {
+      setQuantity(item);
+      setCart(cart => [...cart, item])
+    } // else already cart just increase quantity
+    else {
+      setQuantity(item);
+    }
+    
   }
 
   const router = createBrowserRouter([
