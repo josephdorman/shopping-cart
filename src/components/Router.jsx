@@ -31,13 +31,20 @@ function Router() {
   // AND CONTINUE THE SETQUANTITY FUNCTION TO CHECK IF QUANTITY
   // DECREASES OR INCREASES
 
-  const setQuantity = (item) => {
+  const setQuantity = (item, mode = null) => {
     // if quantity key not in obj, first time being added to cart so give it quantity key init to 1
     if ('quantity' in item === false) {
       product.quantity = 1;
     } // else its already in cart, so just increase quantity
-    else {
-      product.quantity++;
+    else if (mode === 'add' || mode === null) {
+      const ind = cart.findIndex(obj => obj.id === item.id);
+      cart[ind].quantity++;
+      setCart([...cart]);
+    }
+    else if (mode === 'sub') {
+      const ind = cart.findIndex(obj => obj.id === item.id);
+      cart[ind].quantity--;
+      setCart([...cart]);
     }
   }
 
@@ -68,7 +75,7 @@ function Router() {
       children: [
         { index: true, element: <Home /> },
         { path: "store", element: <Store data={data} error={error} loading={loading} onProductClick={onProductClick}/>},
-        { path: "cart", element: <Cart cart={cart}/> },
+        { path: "cart", element: <Cart cart={cart} setQuantity={setQuantity}/> },
         { path: "product/:name", element: <ProductPage product={product} onAddToCart={onAddToCart}/>},
       ]
     },
