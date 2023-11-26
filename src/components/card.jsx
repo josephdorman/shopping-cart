@@ -20,7 +20,7 @@ function Card({ data , onProductClick}) {
     <>
       {
         data.map(data => (
-          <Link to={`../product/${data.title}`} key={data.id} onClick={() => onProductClick(data)}>
+          <Link data-testid="card" to={`../product/${data.title}`} key={data.id} onClick={() => onProductClick(data)}>
           <div className="card" key={data.id}>
             <div className="card-img-wrapper">
               <img className="card-img" src={data.image} alt="" /> 
