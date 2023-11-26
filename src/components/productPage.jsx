@@ -13,7 +13,7 @@ import '../styles/productPage.css'
   Title
   */
 
-function ProductPage({ product }) {
+function ProductPage({ product, onAddToCart }) {
   return (
     <>
       <div>THIS IS THE PRODUCT PAGE</div>
@@ -23,6 +23,7 @@ function ProductPage({ product }) {
         <p>{product.price}</p>
         <p>{product.image}</p>
         <p>{product.rating.rate} {product.rating.count}</p>
+        <button onClick={() => onAddToCart(product)}>ADD TO CART</button>
       </div>
     </>
   )
@@ -32,5 +33,6 @@ function ProductPage({ product }) {
 export default ProductPage;
 
 ProductPage.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.object,
+  onAddToCart: PropTypes.func.isRequired
 }
