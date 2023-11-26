@@ -43,8 +43,12 @@ function Router() {
     }
     else if (mode === 'sub') {
       const ind = cart.findIndex(obj => obj.id === item.id);
-      cart[ind].quantity--;
-      setCart([...cart]);
+
+      if (!cart[ind].quantity <= 0) {
+        cart[ind].quantity--;
+        setCart([...cart]);
+      }
+
     }
   }
 
