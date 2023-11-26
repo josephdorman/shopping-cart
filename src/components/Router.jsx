@@ -71,6 +71,10 @@ function Router() {
     
   }
 
+  const onDelete = (item) => {
+    setCart(cart.filter(element => element !== item))
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -79,7 +83,7 @@ function Router() {
       children: [
         { index: true, element: <Home /> },
         { path: "store", element: <Store data={data} error={error} loading={loading} onProductClick={onProductClick}/>},
-        { path: "cart", element: <Cart cart={cart} setQuantity={setQuantity}/> },
+        { path: "cart", element: <Cart cart={cart} setQuantity={setQuantity} onDelete={onDelete}/> },
         { path: "product/:name", element: <ProductPage product={product} onAddToCart={onAddToCart}/>},
       ]
     },
