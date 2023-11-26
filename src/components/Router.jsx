@@ -15,7 +15,7 @@ function Router() {
   const [cart, setCart] = useState([])
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery?limit=1', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
+    fetch('https://fakestoreapi.com/products/category/jewelery?limit=3', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
@@ -26,6 +26,10 @@ function Router() {
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, [])
+
+  // TODO: PROBABLY MAKE A NEW FUNC TO JUST HANDLE DUPLICATION CHECKS
+  // AND CONTINUE THE SETQUANTITY FUNCTION TO CHECK IF QUANTITY
+  // DECREASES OR INCREASES
 
   const setQuantity = (item) => {
     // if quantity key not in obj, first time being added to cart so give it quantity key init to 1
