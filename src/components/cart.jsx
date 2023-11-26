@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import '../styles/cart.css'
 
 function Cart({ cart, setQuantity }) {
@@ -14,3 +15,8 @@ function Cart({ cart, setQuantity }) {
 }
 
 export default Cart
+
+Cart.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setQuantity: PropTypes.func.isRequired
+}
