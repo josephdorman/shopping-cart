@@ -8,9 +8,9 @@ function Cart({ cart, setQuantity, onDelete }) {
       {
         cart.map(element => (
           <div key={element.id}>
-            {element.title} 
-            <button onClick={() => setQuantity(element, 'add')}>ADD</button> 
-            {element.quantity} 
+            {element.title}
+            <button data-testid="add" onClick={() => setQuantity(element, 'add')}>ADD</button> 
+            {element.quantity}
             <button onClick={() => setQuantity(element, 'sub')}>SUBTRACT</button>
             <button onClick={() => onDelete(element)}>DELETE</button>
           </div>
