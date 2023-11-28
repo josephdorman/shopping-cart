@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import '../styles/filter.css'
 
 function Filter({ onFilterClick }) {
@@ -16,3 +17,7 @@ function Filter({ onFilterClick }) {
 }
 
 export default Filter
+
+Filter.propTypes = {
+  onFilterClick: PropTypes.func.isRequired
+}
