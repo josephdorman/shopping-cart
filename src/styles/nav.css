@@ -10,12 +10,12 @@ ul {
   gap: 10px;
 }
 
-button {
+li button {
   font-size: 15px;
   background-color: white;
   border: none;
 }
 
-button:hover {
+li button:hover {
   border-bottom: 1px solid black;
 }
