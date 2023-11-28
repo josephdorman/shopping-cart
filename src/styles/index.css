@@ -1,7 +1,13 @@
 * {
+  font-family: 'gotham', sans-serif;
   margin: 0px;
   padding: 0px;
   list-style-type: none;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('../assets/Gotham\ Regular.otf');
 }
 
 a {
