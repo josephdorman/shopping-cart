@@ -15,7 +15,7 @@ function Router() {
   const [cart, setCart] = useState([])
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery?limit=3', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
+    fetch('https://fakestoreapi.com/products', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
