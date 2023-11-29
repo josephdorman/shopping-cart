@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import Nav from './nav'
 import '../styles/header.css'
 
-function Header() {
+function Header({ numItems }) {
   return (
     <>
       <header>
         <Link to="/"><h1>HIGHRISE</h1></Link>
-        <Nav></Nav>
+        <Nav numItems={numItems}></Nav>
       </header>
     </>
   )

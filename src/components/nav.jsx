@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import '../styles/nav.css'
 
-function Nav() {
+function Nav({ numItems }) {
   return (
     <>
       <nav>
         <ul>
           <li><Link to="/"><button>HOME</button></Link></li>
           <li><Link to="store"><button>STORE</button></Link></li>
-          <li><Link to="cart"><button>CART</button></Link></li>
+          <li><Link to="cart"><button>CART {numItems}</button></Link></li>
         </ul>
       </nav>
     </>

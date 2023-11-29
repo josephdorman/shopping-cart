@@ -13,6 +13,7 @@ function Router() {
   const [loading, setLoading] = useState(true)
   const [product, setProduct] = useState(null)
   const [cart, setCart] = useState([])
+  const [numItems, setNumItems] = useState(0)
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products', {mode: "cors"}) // to fetch men's clothing use "men's%20clothing"
@@ -27,6 +28,11 @@ function Router() {
       .finally(() => setLoading(false));
   }, [])
 
+  useEffect(() => {
+    let num = 0;
+    cart.forEach(item => num += item.quantity);
+    setNumItems(num);
+  }, [cart])
 
   const setQuantity = (item, mode = null) => {
     // if quantity key not in obj, first time being added to cart so give it quantity key init to 1
@@ -75,10 +81,10 @@ function Router() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App />,
+      element: <App numItems={numItems}/>,
       errorElement: <ErrorPage />,
       children: [
-        { index: true, element: <Home /> },
+        { index: true, element: <Home/> },
         { path: "store", element: <Store data={data} error={error} loading={loading} onProductClick={onProductClick}/>},
         { path: "cart", element: <Cart cart={cart} setQuantity={setQuantity} onDelete={onDelete}/> },
         { path: "product/:name", element: <ProductPage product={product} onAddToCart={onAddToCart}/>},
