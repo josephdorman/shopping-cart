@@ -9,7 +9,7 @@ function Nav({ numItems }) {
         <ul>
           <li><Link to="/"><button>HOME</button></Link></li>
           <li><Link to="store"><button>STORE</button></Link></li>
-          <li><Link to="cart"><button>CART {numItems}</button></Link></li>
+          <li><Link to="cart"><button>CART ( {numItems} )</button></Link></li>
         </ul>
       </nav>
     </>
