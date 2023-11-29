@@ -4,7 +4,6 @@ import Header from './components/header'
 import { Outlet } from "react-router-dom"
 
 function App({ numItems }) {
-  console.log(numItems)
   return (
     <>
       <Header numItems={numItems}></Header>
