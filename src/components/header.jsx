@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import Nav from './nav'
 import '../styles/header.css'
@@ -14,3 +15,7 @@ function Header({ numItems }) {
 }
 
 export default Header
+
+Header.propTypes = {
+  numItems: PropTypes.number.isRequired
+}

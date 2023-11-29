@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 import './styles/App.css'
 import Header from './components/header'
@@ -16,3 +17,7 @@ function App({ numItems }) {
 }
 
 export default App
+
+App.propTypes = {
+  numItems: PropTypes.number.isRequired
+}

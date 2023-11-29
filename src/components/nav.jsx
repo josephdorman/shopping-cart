@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import '../styles/nav.css'
 
@@ -16,3 +17,7 @@ function Nav({ numItems }) {
 }
 
 export default Nav
+
+Nav.propTypes = {
+  numItems: PropTypes.number.isRequired
+}
