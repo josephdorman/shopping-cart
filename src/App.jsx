@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 import './styles/App.css'
 import Header from './components/header'
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom"
 
 function App({ numItems }) {
   console.log(numItems)
