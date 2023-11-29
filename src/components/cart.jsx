@@ -24,10 +24,10 @@ function Cart({ cart, setQuantity, onDelete }) {
       }
   
       // get subtotal
-      tempitems.forEach(item => array.subtotal += item.price);
+      cart.forEach(item => array.subtotal += (item.price * item.quantity));
   
       array.tax = (array.subtotal * 0.051).toFixed(2);
-      array.total = Number(array.subtotal) + Number(array.tax);
+      array.total = (Number(array.subtotal) + Number(array.tax)).toFixed(2);
   
       setPrices([array])
     }
@@ -36,36 +36,12 @@ function Cart({ cart, setQuantity, onDelete }) {
 
   }, [cart])
 
-  const tempitems = [
-    {
-      id: 1,
-      title: 'T-Shirt',
-      quantity: 2,
-      price: 59,
-      image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'
-    },
-    {
-      id: 2,
-      title: 'Pants',
-      quantity: 2,
-      price: 20,
-      image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'
-    },
-    {
-      id: 3,
-      title: 'Shoes',
-      quantity: 1,
-      price: 140,
-      image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'
-    }
-  ]
-
   return (
     <>
       <div className='cart'>
         <div className='items'>
           {
-            tempitems.map(element => (
+            cart.map(element => (
               <div className='item' key={element.id}>
                 <div className="item-container">
                   <img className="item-img" src={element.image} />
