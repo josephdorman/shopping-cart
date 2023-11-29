@@ -4,6 +4,12 @@
   width: 1400px;
 }
 
+.product-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-img {
   max-height: 670px;
   max-width: 600px;
