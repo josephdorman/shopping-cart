@@ -31,13 +31,14 @@ function Store({data, error, loading, onProductClick}) {
 
   return (
     <>
-      <p>THIS IS THE STORE PAGE</p>
-      <Filter onFilterClick={onFilterClick}/>
-      {error 
-      ? <p>A network error was encountered</p> // if error render error
-      : loading ? <p>Loading...</p> // if no error check if loading and output loading if loading
-      : <div className="card-container"><Card filteredData={filteredData} onProductClick={onProductClick}/></div> // if not loading then render the card (data finished fetching)
-      }
+      <div className='store'>
+        <Filter onFilterClick={onFilterClick}/>
+        {error 
+        ? <p>A network error was encountered</p> // if error render error
+        : loading ? <p>Loading...</p> // if no error check if loading and output loading if loading
+        : <div className="card-container"><Card filteredData={filteredData} onProductClick={onProductClick}/></div> // if not loading then render the card (data finished fetching)
+        }
+      </div>
     </>
   )
 }

@@ -1,0 +1,17 @@
+.filter-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-bar button {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.filter-bar button:hover,
+.filter-bar button:focus {
+  border: 1px dashed black;
+}

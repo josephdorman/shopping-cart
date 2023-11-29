@@ -4,8 +4,8 @@ import '../styles/filter.css'
 function Filter({ onFilterClick }) {
   return (
     <>
-      <div>THIS IS THE FILTER BAR</div>
-      <div>
+      <div className='filter-bar'>
+        <p>Filters: </p>
         <button onClick={() => onFilterClick('all')}>ALL</button>
         <button onClick={() => onFilterClick('jewelery')}>JEWELERY</button>
         <button onClick={() => onFilterClick('electronics')}>ELECTRONICS</button>
