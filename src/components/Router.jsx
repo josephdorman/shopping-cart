@@ -27,9 +27,6 @@ function Router() {
       .finally(() => setLoading(false));
   }, [])
 
-  // TODO: PROBABLY MAKE A NEW FUNC TO JUST HANDLE DUPLICATION CHECKS
-  // AND CONTINUE THE SETQUANTITY FUNCTION TO CHECK IF QUANTITY
-  // DECREASES OR INCREASES
 
   const setQuantity = (item, mode = null) => {
     // if quantity key not in obj, first time being added to cart so give it quantity key init to 1
