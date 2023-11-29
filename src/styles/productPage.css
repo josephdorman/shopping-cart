@@ -88,3 +88,34 @@
   font-size: 24px;
   border-bottom: 2px solid black;
 }
+
+/* THIS DECLARATION OF COLORS IS REPETETIVE I KNOW THIS IS JUST TEMPORARY AND WILL
+MAKE A BETTER SOLUTION */
+
+.product-color .button-container button:nth-child(1) {
+  background-color: white;
+}
+
+.product-color .button-container button:nth-child(2) {
+  background-color: black;
+}
+
+.product-color .button-container button:nth-child(3) {
+  background-color: brown;
+}
+
+.product-color .button-container button:nth-child(4) {
+  background-color: red;
+}
+
+.product-color .button-container button:nth-child(5) {
+  background-color: green;
+}
+
+.product-color .button-container button:nth-child(6) {
+  background-color: blue;
+}
+
+.product-color .button-container button:nth-child(7) {
+  background-color: purple;
+}
