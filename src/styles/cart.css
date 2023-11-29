@@ -2,12 +2,19 @@
   display: flex;
 }
 
+.items {
+  width: 500px;
+  height: 900px;
+  border: 1px solid black;
+}
+
 .checkout {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   padding: 15px 10px;
   width: 300px;
+  max-height: 200px;
 }
 
 .checkout p {
